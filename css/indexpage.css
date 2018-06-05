@@ -1,0 +1,90 @@
+body{
+	background-color: lightgrey;
+	margin: 0;
+	font-family: Verdana,Helvatica;
+	font-size: 15px;
+}
+
+pre {   
+   		white-space: pre-wrap; 
+		font-family: Verdana,Helvatica; 
+		color: #000000;
+		background-color: #F5F5F5;
+		border:1px solid rgb(180, 180, 180);
+ 		padding: 20px;
+ 		overflow: scroll;
+ 		border-radius: 5px;
+ 		width: 600px;
+	 }
+.Constant { color: #c00000; }
+.Special { color: #c000c0; }
+.Statement { color: #af5f00; }
+.PreProc { color: #c000c0; }
+.Type { color: #008000; }
+.Comment { color: #0000c0; }
+#nav-bar{
+	background-color: #435770;
+	color:white;
+	margin-top: 53px;
+}
+#nav-bar img{
+	float: right;
+	width: 110px;
+	height: 110px;
+	margin-top: -53px;
+}
+
+#nav-bar h3{
+	
+	text-align: center;
+
+}
+
+#nav-bar ul{
+list-style-type: none;
+padding: 20px;
+margin:0px;
+}
+#nav-bar li{
+	display: inline;
+	margin: 0px;
+	}
+#nav-bar a{
+color: white;
+padding: 20px;
+text-decoration: none;
+transition: 1s opacity;
+
+}
+#nav-bar a:hover{
+	background-color: white;
+	color:black;
+	opacity: 0.9;
+	
+}
+
+.main{
+	padding: 20px;
+	background: white;
+	width: 1000px;
+	display: block;
+	margin:0 auto;
+}
+
+@media (max-width: 400px){
+	#nav-bar img{
+		width: 110px;
+		height: 110px;
+	}
+}
+@media (max-width: 677px){
+	pre{
+		width: auto;
+	}
+}
+@media (max-width: 1000px){
+	.main{
+		width: auto;
+	}
+
+}

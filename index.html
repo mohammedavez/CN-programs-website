@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/indexpage.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="nav-bar">
+	<img src="images/profile_pic.png">
+	<ul>
+		<li><a href="">My Works</a></li>
+		<li><a href="">About Me</a></li>
+	</ul>
+</div>
+<div class="main">
+<pre id='vimCodeElement'>
+
+<span class="PreProc">#include </span><span class="Constant">&lt; stdio.h &gt;</span>
+<span class="PreProc">#include </span><span class="Constant">&lt; conio.h &gt;</span>
+  <span class="Type">int</span> main() {
+  <span class="Type">int</span> i, n, count = <span class="Constant">0</span>, c, value = <span class="Constant">0</span>;
+  <span class="Type">int</span> count1 = <span class="Constant">0</span>, j = <span class="Constant">0</span>;
+  <span class="Type">int</span>  zetobaddfl[<span class="Constant">10</span>] = { <span class="Constant">0</span>,<span class="Constant">1</span>,<span class="Constant">1</span>,<span class="Constant">1</span>,<span class="Constant">1</span>,<span class="Constant">1</span>,<span class="Constant">1</span>,<span class="Constant">0</span>}; <span class="Comment">//Zero's to be added first and last</span>
+    <span class="Type">int</span> arr[<span class="Constant">100</span>];
+    clrscr();
+    printf(<span class="Constant">&quot;Bit Stuffing:</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>);
+    printf(<span class="Constant">&quot;Enter Frame length:&quot;</span>);
+    scanf(<span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant">&quot;</span>, &amp; n);
+    printf(<span class="Constant">&quot;Enter the Bits data:&quot;</span>);
+    <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; n; i++) {
+      scanf(<span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant">&quot;</span>, &amp; arr[i]);
+    }
+    <span class="Comment">// ========*Inserting </span><span class="Constant">0</span><span class="Comment"> after </span><span class="Constant">5</span><span class="Comment"> consecutive  </span><span class="Constant">0</span><span class="Comment">'s*========</span>
+    <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; n; i++) {
+      <span class="Statement">if</span> (arr[i] == <span class="Constant">1</span>) {
+        count++;
+        <span class="Statement">if</span> (count == <span class="Constant">5</span>) {
+          <span class="Statement">for</span> (c = n - <span class="Constant">1</span>; c &gt;= (i + <span class="Constant">1</span>) - <span class="Constant">1</span>; c--)
+            arr[c + <span class="Constant">1</span>] = arr[c];
+
+          arr[i + <span class="Constant">1</span>] = value; <span class="Comment">//value=</span><span class="Constant">0</span>
+          n = n + <span class="Constant">1</span>;
+        }
+
+      } <span class="Statement">else</span> {
+        count = <span class="Constant">0</span>;
+      }
+    } <span class="Comment">//========* Inserting done*========</span>
+    printf(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+      <span class="Comment">// ========*Just printing the stuffed data*========</span>
+
+      printf(<span class="Constant">&quot;Data After Bit Stuffing:&quot;</span>);
+        <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; n; i++) {
+          printf(<span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant">&quot;</span>, arr[i]);
+        }
+
+    	<span class="Comment">//========*End*========</span>
+
+       	printf(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+        <span class="Comment">//========*Adding the beginning flag*========</span>
+        <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; <span class="Constant">8</span>; i++) {
+          <span class="Statement">for</span> (j = n - <span class="Constant">1</span>; j &gt;= (i + <span class="Constant">1</span>) - <span class="Constant">1</span>; j--)
+            arr[j + <span class="Constant">1</span>] = arr[j];
+
+          arr[i] = zetobaddfl[i];
+          n++;
+        }
+        <span class="Comment">//========*End*========</span>
+        <span class="Comment">//========*Adding ending flag*========</span>
+        <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; <span class="Constant">8</span>; i++) {
+          arr[n] = zetobaddfl[i];
+          n++;
+        }
+        <span class="Comment">//========*End*========</span>
+        printf(<span class="Constant">&quot;Transmitted data:&quot;</span>);
+        <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; n; i++) {
+          printf(<span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant"> &quot;</span>, arr[i]);
+        }
+        printf(<span class="Constant">&quot;</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>); printf(<span class="Constant">&quot;Bit Un-stuffing:</span><span class="Special">\n\n</span><span class="Constant">&quot;</span>);
+
+        printf(<span class="Constant">&quot;Received data:&quot;</span>);
+        <span class="Statement">for</span> (i = <span class="Constant">0</span>; i &lt; n; i++) {
+          printf(<span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant"> &quot;</span>, arr[i]);
+        }
+        printf(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">Final data:&quot;</span>);
+          <span class="Comment">//========*Unstuffing the data at the receiver’s end*========</span>
+          count = <span class="Constant">0</span>;
+          <span class="Statement">for</span> (i = <span class="Constant">8</span>; i &lt; n - <span class="Constant">8</span>; i++) {
+            <span class="Statement">if</span> (arr[i] == <span class="Constant">1</span>) {
+              count++;
+              <span class="Statement">if</span> (count == <span class="Constant">5</span>) {
+                <span class="Statement">for</span> (j = i + <span class="Constant">1</span>; j &lt; n - <span class="Constant">2</span>; j++) {
+                  arr[j] = arr[j + <span class="Constant">1</span>];
+                }
+                n--;
+                count = <span class="Constant">0</span>;
+              }
+
+            } <span class="Statement">else</span> {
+              count = <span class="Constant">0</span>;
+            }
+          }
+          <span class="Comment">//========*End*========</span>
+          <span class="Statement">for</span> (i = <span class="Constant">8</span>; i &lt; n - <span class="Constant">8</span>; i++) {
+            printf(<span class="Constant">&quot;</span><span class="Special">%d</span><span class="Constant">&quot;</span>, arr[i]);
+          }
+          getch();
+          <span class="Statement">return</span> <span class="Constant">0</span>;
+        }
+</pre>
+
+
+</div>
+
+</body>
+</html>
