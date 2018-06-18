@@ -14,7 +14,7 @@ pre {
  		padding: 20px;
  		overflow: scroll;
  		border-radius: 5px;
- 		width: 600px;
+ 		width: auto;
 	 }
 .Constant { color: #c00000; }
 .Special { color: #c000c0; }
@@ -70,7 +70,19 @@ transition: 1s opacity;
 	display: block;
 	margin:0 auto;
 }
+.bit-stuffing h2{
+	font-family: Arial;
+	font-size: 30px;
+}
+.bit-stuffing p{
 
+	border:1px solid rgb(180, 180, 180);
+	background-color: lightgrey;
+	font-family: sans-serif;
+	padding: 15px;
+	width: auto;
+	border-radius: 5px;
+}
 @media (max-width: 400px){
 	#nav-bar img{
 		width: 110px;
